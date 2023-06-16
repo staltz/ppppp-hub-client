@@ -1,0 +1,54 @@
+{
+  "name": "ppppp-hub-client",
+  "version": "0.0.1",
+  "description": "secret-stack plugin to connect to a ppppp-hub",
+  "author": "Andre Staltz <contact@staltz.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/staltz/ppppp-hub-client",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:staltz/ppppp-hub-client.git"
+  },
+  "main": "index.js",
+  "files": [
+    "lib/**/*.js"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/index.js"
+    }
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "promisify-tuple": "~1.2.0",
+    "pull-notify": "~0.1.2",
+    "pull-pair": "~1.1.0",
+    "pull-stream": "~3.7.0",
+    "ssb-network-errors": "~1.0.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.8",
+    "@types/pull-stream": "^3.6.2",
+    "bs58": "^5.0.0",
+    "c8": "7",
+    "husky": "^4.3.0",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3",
+    "typescript": "^5.1.3"
+  },
+  "scripts": {
+    "test": "node --test",
+    "format-code": "prettier --write \"(lib|test)/**/*.js\"",
+    "format-code-staged": "pretty-quick --staged --pattern \"(lib|test)/**/*.js\"",
+    "coverage": "c8 --reporter=lcov npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format-code-staged"
+    }
+  }
+}
