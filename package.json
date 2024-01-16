@@ -19,6 +19,9 @@
   "exports": {
     ".": {
       "require": "./lib/index.js"
+    },
+    "./plugin": {
+      "require": "./lib/plugin-hub-client.js"
     }
   },
   "type": "commonjs",
